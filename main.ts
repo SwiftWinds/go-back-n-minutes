@@ -10,12 +10,13 @@ const promptForDate = () => {
 };
 
 const promptForMinutes = () => {
-  let minuteStr = prompt("Enter number of minutes:");
-  while (!minuteStr || isNaN(parseInt(minuteStr))) {
+  let minutesStr = prompt("Enter number of minutes:");
+  let minutes;
+  while (!minutesStr || isNaN(minutes = parseInt(minutesStr))) {
     console.log("ERROR: Invalid number");
-    minuteStr = prompt("Enter number of minutes:");
+    minutesStr = prompt("Enter number of minutes:");
   }
-  return parseInt(minuteStr);
+  return minutes;
 };
 
 const minutes = promptForMinutes();
