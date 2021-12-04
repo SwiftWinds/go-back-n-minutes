@@ -22,5 +22,11 @@ const minutes = promptForMinutes();
 while (true) {
   const date = promptForDate();
   const subbedDate = subMinutes(date, minutes);
-  console.log(subbedDate.toISOString()); // git supports ISO 8601 timestamps: https://git-scm.com/docs/git-commit#_date_formats
+
+  // git supports ISO 8601 timestamps: https://git-scm.com/docs/git-commit#_date_formats
+  // do `git log --date=iso --pretty=format:'%aI' -n 1` to see the date
+  // and then do `git commit --amend --date="<some ISO date string>" --no-edit`
+  // if you `git rebase -i --root --committer-date-is-author-date`, do
+  // `git filter-branch --env-filter 'export GIT_COMMITTER_DATE="$GIT_AUTHOR_DATE"'` after rebasing
+  console.log(subbedDate.toISOString());
 }
