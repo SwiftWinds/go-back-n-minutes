@@ -1,7 +1,7 @@
 import { isValid, parseISO, subMinutes } from "https://cdn.skypack.dev/date-fns@^2.27.0";
 
 const promptForDate = () => {
-  let date = parseISO(prompt("Enter date in ISO 8601 format:"));
+  let date = parseISO(prompt("Enter date in strict ISO 8601 format:"));
   while (!isValid(date)) {
     console.log("ERROR: Invalid date");
     date = parseISO(prompt("Enter date in ISO 8601 format:"));
