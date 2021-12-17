@@ -4,7 +4,7 @@ const promptForDate = () => {
   let date = parseISO(prompt("Enter date in strict ISO 8601 format:"));
   while (!isValid(date)) {
     console.log("ERROR: Invalid date");
-    date = parseISO(prompt("Enter date in ISO 8601 format:"));
+    date = parseISO(prompt("Enter date in strict ISO 8601 format:"));
   }
   return date;
 };
